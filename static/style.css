@@ -1,3 +1,27 @@
-.homepage {
+body {
+    background-image: url("oak.png");
+}
+
+body h1 {
 	font-family: 'Patua One', cursive;
+	color: gold;
+	text-shadow: 0.1em 0.1em #333
+}
+
+.hometext {
+	font-family: 'Patua One', cursive;
+	width: 600px;
+	height: 200px;
+	color: gold;
+	font-size: 20px;
+	text-shadow: 0.1em 0.1em #333
+}
+
+.homeimages {
+	width: 220px;
+	height: 100px;
+}
+
+.container {
+	margin-left: 50px;
 }
