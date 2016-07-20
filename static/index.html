@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+      <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
+    </script>
+
+    <title>Let's Go Oakland!</title>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.min.js"></script>
+    
+    <script>
+    //  inject the ngRoute dependency in the module.
+    var myApp = angular.module('myApp', ['ngRoute']);
+    //  use the config method to set up routing:
+      myApp.config(function ($routeProvider) {
+        $routeProvider
+          .when('/',{
+              templateUrl: 'partials/home.html'
+          })
+          .when('/tweets',{
+              templateUrl: 'partials/tweets.html'
+          })
+          .when('/pictures',{
+              templateUrl: 'partials/pictures.html'
+          })
+          .when('/podcasts',{
+              templateUrl: 'partials/podcasts.html'
+          })
+          .when('/videos',{
+              templateUrl: 'partials/videos.html'
+          })
+          .when('/chat',{
+              templateUrl: 'partials/chat.html'
+          })
+          .otherwise({
+            redirectTo: '/'
+          });
+      });
+
+    </script>
+  </head>
+
+  <body>
+    <div ng-app='myApp'>
+      <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#" style="color: yellow;">Let's Go Oakland!</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="#/" style="color: yellow;">Home</a></li>
+          <li><a href="#/tweets" style="color: yellow;">Tweets</a></li>
+          <li><a href="#/pictures" style="color: yellow;">Pictures</a></li>
+          <li><a href="#/podcasts" style="color: yellow;">Podcasts</a></li>
+          <li><a href="#/videos" style="color: yellow;">Videos</a></li>
+          <li><a href="#/chat" style="color: yellow;">Chat</a></li>
+        </ul>
+      </div>
+    </nav>
+        <div ng-view="">
+        </div>
+    </div>
+  </body>
+</html>
